@@ -11,10 +11,10 @@ class Conta {
         if (valor > 0) {
             this.saldo += valor;
             this.transacoes.push(`Depósito: ${valor}R$`)
-            console.log(`Depósito de ${valor} realizado`);
+            console.log(`>>Depósito de ${valor}R$ realizado<<`);
         }
         else {
-            console.log("Valor de depósito inválido tente novamente");
+            console.log(">>Valor de depósito inválido tente novamente<<");
         }
     }
 
@@ -22,7 +22,7 @@ class Conta {
         if (valor > 0 && valor <= this.saldo) {
             this.saldo -= valor;
             this.transacoes.push(`Saque: ${valor}R$`)
-            console.log(`Saque de ${valor} realizado`);
+            console.log(`>>Saque de ${valor}R$ realizado<<`);
         }
         else {
             console.log("Valor de saque inválido tente novamente");
@@ -34,9 +34,9 @@ class Conta {
     }
 
     extrato(){
-        console.log(`Èxtrato de ${this.titular} - Conta Nº ${this.id_conta}`);
+        console.log(`Extrato de ${this.titular} - Conta Nº ${this.id_conta}`);
         for(const transacoes of this.transacoes){
-            console.log(transacoes);
+            console.log(`- ${transacoes}`);
         }
     }
 }
