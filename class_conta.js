@@ -6,3 +6,6 @@ class Conta{
         this.data_criacao = data_criacao;
     }
 }
+
+
+module.exports = Conta;
