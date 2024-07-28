@@ -13,7 +13,9 @@ function Menu_Display() {
         + "[2] - Sacar\n"
         + "[3] - Conferir Saldo\n"
         + "[4] - Gerar extrato\n"
-        + "[5] - Sair\n\n"
+        + "[5] - Aplicar juros conta corrente\n"
+        + "[6] - Conferir poupança\n"
+        + "[7] - Sair\n\n"
     ))
 
     if (prpt_display == 1) {
@@ -39,6 +41,20 @@ function Menu_Display() {
     }
 
     else if (prpt_display == 5) {
+        if (Count instanceof Conta_Corrente) {
+            Count.aplicar_juros()
+        } else {
+            console.log(">> Esta opção é válida apenas para contas correntes <<")
+            Menu_Display()
+        }
+    }
+
+    else if (prpt_display == 6) {
+        
+
+    }
+
+    else if (prpt_display == 7) {
         console.log(">>Até mais<<");
     }
 
@@ -48,22 +64,19 @@ function Menu_Display() {
     }
 }
 
-
-
 prpt_conta = prompt("Olá, deseja criar uma conta?: [Y/N] ").toLowerCase()
-if (prpt_conta == "y") {
+if (prpt_conta == "y"){
 
     prpt_name = prompt("Excelente, qual seria seu nome?: ");
 
-    if (isNaN(prpt_name)) {
+    if (isNaN(prpt_name)){
         Count = new Conta(prpt_name, 1, 0)
         Menu_Display()
     }
 
-    else {
+    else{
         console.log(">>Digite um nome válido por favor<<");
     }
-
 }
 
 else if (prpt_conta == "n") {
